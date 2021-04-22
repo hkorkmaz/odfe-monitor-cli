@@ -15,7 +15,7 @@
 
 package utils
 
-// Limiter struct for handling maximum concurent request
+// Limiter struct for handling maximum concurrent request
 type Limiter struct {
 	limit              int
 	concurrentRoutines chan struct{}
