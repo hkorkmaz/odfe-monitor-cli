@@ -21,8 +21,8 @@ import (
 	"strconv"
 
 	mapset "github.com/deckarep/golang-set"
-	"github.com/mihirsoni/odfe-monitor-cli/destination"
-	"github.com/mihirsoni/odfe-monitor-cli/es"
+	"github.com/emretanriverdi/odfe-monitor-cli/destination"
+	"github.com/emretanriverdi/odfe-monitor-cli/es"
 	"github.com/pkg/errors"
 )
 

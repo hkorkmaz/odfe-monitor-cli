@@ -1,16 +1,10 @@
-# [NOTICE] This repo will no longer maintained, and soon will be deprecated in favor of official [odfe-cli](https://github.com/opendistro-for-elasticsearch/odfe-cli) once Monitoring is onboarded. Tracking [issue](https://github.com/opendistro-for-elasticsearch/odfe-cli/issues/34)
-
-
-
 ### OpenDistro for Elasticsearch Alerting CLI
 
 odfe-monitor-cli enables you to manage and organize [Elasticsearch Alerting monitors](https://opendistro.github.io/for-elasticsearch-docs/docs/alerting/) through YAML file.
 
 ## Why would I want to manage my monitors in YAML files?
 
-Excellent question. So many reasons:
-
-* You can store your monitors in source control so you can track changes (who changed this monitor?), and perform code reviews.
+* You can store your monitors in source control so you can track changes, and perform code reviews.
 * Enable through automated pipelines.
 * It is very easy to accidentally make changes to monitors on UI or through API. You can always refer back on this and update existing monitors.
 * You may have multiple stages / regions and would like have monitors running on each stage / region.
@@ -20,26 +14,23 @@ Excellent question. So many reasons:
 From source:
 
 ```
-$ go get github.com/mihirsoni/odfe-monitor-cli/
+$ go get github.com/emretanriverdi/odfe-monitor-cli/
 ```
 
 From binary to `./bin/odfe-monitor-cli`:
 
 ```
-$ curl -sfL https://raw.githubusercontent.com/mihirsoni/odfe-monitor-cli/master/godownloader.sh | bash
+$ curl -sfL https://raw.githubusercontent.com/emretanriverdi/odfe-monitor-cli/master/godownloader.sh | bash
 ```
 
 From binary to `/usr/local/bin/odfe-monitor-cli`:
 
 ```
-$ curl -sfL https://raw.githubusercontent.com/mihirsoni/odfe-monitor-cli/master/godownloader.sh | bash -s -- -b /usr/local/bin
+$ curl -sfL https://raw.githubusercontent.com/emretanriverdi/odfe-monitor-cli/master/godownloader.sh | bash -s -- -b /usr/local/bin
 ```
 
 ## Getting Started
 
-
-Currently, this CLI doesn't support how the destinations are managed. This will be supported in up-coming versions.
-For now, after installing you can run the commands to sync your destinations.
 
 ### Sync
 
@@ -125,15 +116,3 @@ Sample monitor
             - Period start: {{ctx.periodStart}}
             - Period end: {{ctx.periodEnd}}
 ```
-
-## Note
-
-* You might see the diff in queries after pushing new monitors, this could be because Alerting uses ESQuery builder,which adds some defaults to improve the query. Currently only solution is to adhere to remote query and update yaml file manually. You could currently do this with either `diff` and applying diff.
-
-## TODO
-
-* Add support of providing validation against custom TLS certificate.
-* Support AWS Elasticsearch. Need to integrated request signer
-* Find a way to avoid defaults difference in query?
-* Manage destination from CLI.
-* Add unit test cases
