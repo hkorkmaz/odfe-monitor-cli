@@ -343,7 +343,7 @@ End of functions from https://github.com/client9/shlib
 EOF
 
 PROJECT_NAME="odfe-monitor-cli"
-OWNER=emretanriverdi
+OWNER=hkorkmaz
 REPO="odfe-monitor-cli"
 BINARY=odfe-monitor-cli
 FORMAT=tar.gz
